@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A beautiful digital clock showing current times across the world." />
+  <title>World Clock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">TIME, EVERYWHERE</p>
+        <h1>World <span>Clock</span></h1>
+        <p class="subtitle">A calm view of the time zones that keep your world moving.</p>
+      </div>
+      <div class="live-status"><span class="pulse"></span>Live</div>
+    </header>
+
+    <section class="local-card" aria-label="Your local time">
+      <div class="local-copy">
+        <p class="eyebrow">YOUR LOCAL TIME</p>
+        <h2 id="local-zone">Loading location...</h2>
+        <p id="local-date" class="date">Loading date...</p>
+      </div>
+      <div class="local-time" id="local-time" aria-live="polite">00:00:00</div>
+    </section>
+
+    <section class="toolbar" aria-label="Clock controls">
+      <div>
+        <p class="section-label">TIME ZONES</p>
+        <p class="zone-count"><span id="zone-count">0</span> cities displayed</p>
+      </div>
+      <button id="format-toggle" class="format-toggle" type="button" aria-pressed="false">24-hour format</button>
+    </section>
+
+    <section id="clock-grid" class="clock-grid" aria-label="World clocks"></section>
+
+    <form id="add-zone-form" class="add-zone" aria-label="Add a time zone">
+      <label for="zone-select">Add a city</label>
+      <select id="zone-select">
+        <option value="America/Los_Angeles">Los Angeles</option>
+        <option value="America/Chicago">Chicago</option>
+        <option value="America/New_York">New York</option>
+        <option value="America/Sao_Paulo">São Paulo</option>
+        <option value="Europe/London">London</option>
+        <option value="Europe/Paris">Paris</option>
+        <option value="Africa/Cairo">Cairo</option>
+        <option value="Asia/Dubai">Dubai</option>
+        <option value="Asia/Kolkata">Mumbai</option>
+        <option value="Asia/Singapore">Singapore</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Australia/Sydney">Sydney</option>
+      </select>
+      <button type="submit">Add clock <span>+</span></button>
+    </form>
+
+    <footer>Times update automatically · Your browser's time zone is used for local time</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
